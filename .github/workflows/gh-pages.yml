@@ -3,14 +3,16 @@ name: github-pages-publish
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
       - run: npm run all-install
       - run: NODE_ENV=production npm run build
       - uses: peaceiris/actions-gh-pages@v3

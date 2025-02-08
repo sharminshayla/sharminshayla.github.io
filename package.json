@@ -7,10 +7,10 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "web-install": "npm install",
         "blog-install": "cd blog && npm install && cd ..",
-        "all-install": "npm run web-install && npm run blog-install",
+        "all-install": "npm run web-install",
         "web-build": "webpack",
         "blog-build": "cd blog && npm run build && cd ..",
-        "build": "rm -rf dist && npm run web-build && npm run blog-build",
+        "build": "rm -rf dist && npm run web-build",
         "deploy": "npm run build && gh-pages -d dist"
     },
     "keywords": [],
