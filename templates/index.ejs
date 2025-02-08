@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%= analytics %>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="msapplication-TileColor" content="#3c78d8">
+    <meta name="msapplication-TileImage" content="./icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#3c78d8">
+
+    <!-- Primary Meta Tags -->
+    <title>Hi, I'm Shayla Sharmin. I'm an architect based in Dhaka.</title>
+    <meta name="title" content="Hi, I'm Shayla Sharmin. I'm an architect based in Dhaka.">
+    <meta name="description" content="Check out Shayla Sharmin's projects, work experience and more.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= homepage %>">
+    <meta property="og:title" content="Hi, I'm Shayla Sharmin. I'm an architect based in Dhaka.">
+    <meta property="og:description" content="Check out Shayla Sharmin's projects, work experience and more.">
+    <meta property="og:image" content="<%= homepage %>meta-img.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="<%= homepage %>">
+    <meta property="twitter:title" content="Hi, I'm Shayla Sharmin. I'm an architect based in Dhaka.">
+    <meta property="twitter:description"
+        content="Check out Shayla Sharmin's projects, work experience and more.">
+    <meta property="twitter:image" content="<%= homepage %>meta-img.jpg">
+
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem("theme") !== 'dark') return;
+                (localStorage.getItem("theme") === 'dark' || window.matchMedia("(prefers-color-scheme: dark)").matches) && document.documentElement.classList.toggle('dark');
+            } catch (e) { }
+        })();
+    </script>
+
+    <!-- Vendor assets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Six+Caps&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <noscript>
+        <style>
+            [style*='opacity:0'] { opacity: unset !important; }
+        </style>
+    </noscript>
+</head>
+
+<body class="transition duration-500 titillium-web-regular">
+    <div class="container">
+        <nav class="nav my-5 d-flex justify-content-center justify-content-md-between">
+            <span class="navbar-brand six-caps-regular" href="#">
+                Shayla Sharmin
+            </span>
+            <div class="d-flex justify-content-center align-items-center">
+                <a class="nav-link btn btn-link" href="/blog">
+                    <i aria-hidden="true" class="fa fa-building"></i> Projects
+                </a>
+                <a class="nav-link btn btn-link" href="/blog">
+                    <i aria-hidden="true" class="fa fa-camera"></i> Photography
+                </a>
+                <a class="nav-link btn btn-link" href="/blog">
+                    <i aria-hidden="true" class="fa fa-rss"></i> Blog
+                </a>
+            </div>
+        </nav>
+    </div>
+    <div class="projects">
+    </div>
+    <footer class="footer my-5">
+    </footer>
+</body>
+
+</html>

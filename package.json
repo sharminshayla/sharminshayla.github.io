@@ -1,0 +1,37 @@
+{
+    "name": "sharminshayla.github.io",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "webpack serve",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "web-install": "npm install",
+        "blog-install": "cd blog && npm install && cd ..",
+        "all-install": "npm run web-install && npm run blog-install",
+        "web-build": "webpack",
+        "blog-build": "cd blog && npm run build && cd ..",
+        "build": "rm -rf dist && npm run web-build && npm run blog-build",
+        "deploy": "npm run build && gh-pages -d dist"
+    },
+    "keywords": [],
+    "author": "",
+    "private": true,
+    "devDependencies": {
+        "@babel/core": "^7.15.0",
+        "@babel/preset-env": "^7.15.0",
+        "babel-loader": "^8.2.2",
+        "copy-webpack-plugin": "^9.0.1",
+        "css-loader": "^6.2.0",
+        "dotenv": "^8.2.0",
+        "gh-pages": "^6.3.0",
+        "html-webpack-plugin": "^5.3.2",
+        "mini-css-extract-plugin": "^2.2.0",
+        "moment": "^2.29.1",
+        "webpack": "^5.51.1",
+        "webpack-cli": "^4.8.0",
+        "webpack-dev-server": "^4.0.0"
+    },
+    "dependencies": {
+        "dayjs": "^1.10.7"
+    }
+}
