@@ -12,7 +12,8 @@ const getTemplateParameters = (module) => {
         analytics: getAnalyticsService(),
         homepage: process.env.HOMEPAGE || 'https://sharminshayla.github.io/',
         year: new Date().getFullYear(),
-        view: require(`./src/pages/${module}.view.js`)()
+        name: module,
+        view: require(`./src/pages/${module}.view.js`)(),
     }
 };
 

@@ -10,7 +10,7 @@ function saveThemePreference() {
 
 function setupTheme() {
   saveThemePreference();
-  const navLinks = document.querySelector('nav > div');
+  const navLinks = document.querySelector('.navbar-nav');
   const defaultDark = document.documentElement.classList.contains("dark");
   
 
@@ -34,7 +34,18 @@ function addEmail() {
   emailEls[0].outerHTML = '<a href="mailto:example@gmail.com" title="Send Email">example@gmail.com</a>';
 }
 
-window.onload = function () {
+function activateMenuItem() {
+  const view = document.querySelector('.view');
+  const viewName = view.classList[1].replace('view-','');
+  const activeMenuItem = document.querySelector(`.nav-item[data-view="${viewName}"]`);
+
+  if (! activeMenuItem) { return; }
+
+  activeMenuItem.classList.add('active');
+}
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  activateMenuItem();
   try { setupTheme(); } catch(e) {};
   addEmail(); 
-};
+});
