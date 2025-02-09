@@ -7,7 +7,7 @@ module.exports = function () {
                     <strong>Hi, I'm Shayla!</strong>
                 </h1>
                 <h3 class="my-5">
-                    I'm an independent web UI engineer, author, speaker, and educator. I specialize in inclusive design implementation, and I teach designers and developers how to create inclusive web user interfaces, with a strong focus on accessibility.
+                    I'm a freelance architect based in Dhaka, Bangladesh. I specialize in architectural design and interior design.
                 </h3>
                 <div class="d-flex flex-column my-4">
                     <button type="button" class="btn btn-outline-primary btn-lg">Learn more about me</button>
