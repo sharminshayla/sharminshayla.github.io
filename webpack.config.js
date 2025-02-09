@@ -7,10 +7,22 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const { getProjects, getWorks, getAnalyticsService } = require('./src/ssr');
 
+const templateParameters = {
+    analytics: getAnalyticsService(),
+    homepage: process.env.HOMEPAGE || 'https://sharminshayla.github.io/',
+    projects: getProjects(),
+    works: getWorks(),
+    year: new Date().getFullYear()
+};
+
 
 module.exports = {
     mode: 'production',
-    entry: './src/runtime.js',
+    entry: {
+        app: './src/app.js',
+        home: './src/pages/home.js',
+        works: './src/pages/works.js'
+    },
     devServer: {
         static: {
             directory: path.join(__dirname, 'public'),
@@ -47,15 +59,18 @@ module.exports = {
             filename: "[name].[contenthash].css",
             chunkFilename: "[id].[contenthash].css",
         }),
+        // index.html
         new HtmlWebpackPlugin({
-            templateParameters: {
-                analytics: getAnalyticsService(),
-                homepage: process.env.HOMEPAGE || 'https://sharminshayla.github.io/',
-                projects: getProjects(),
-                works: getWorks(),
-                year: new Date().getFullYear()
-            },
-            template: 'templates/index.ejs'
+            templateParameters,
+            template: 'templates/index.ejs',
+            chunks: ['app', 'home']
+        }),
+        // works.html
+        new HtmlWebpackPlugin({
+            templateParameters,
+            template: 'templates/index.ejs',
+            chunks: ['app', 'works'],
+            filename: 'works.html',
         }),
         new CopyWebpackPlugin({
             patterns: [
