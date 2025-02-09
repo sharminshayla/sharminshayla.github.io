@@ -5,14 +5,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const { getProjects, getWorks, getAnalyticsService } = require('./src/ssr');
+const { getAnalyticsService } = require('./src/ssr');
 
-const templateParameters = {
-    analytics: getAnalyticsService(),
-    homepage: process.env.HOMEPAGE || 'https://sharminshayla.github.io/',
-    projects: getProjects(),
-    works: getWorks(),
-    year: new Date().getFullYear()
+const getTemplateParameters = (module) => {
+    return {
+        analytics: getAnalyticsService(),
+        homepage: process.env.HOMEPAGE || 'https://sharminshayla.github.io/',
+        year: new Date().getFullYear(),
+        view: require(`./src/pages/${module}.view.js`)()
+    }
 };
 
 
@@ -61,13 +62,13 @@ module.exports = {
         }),
         // index.html
         new HtmlWebpackPlugin({
-            templateParameters,
+            templateParameters: getTemplateParameters('home'),
             template: 'templates/index.ejs',
             chunks: ['app', 'home']
         }),
         // works.html
         new HtmlWebpackPlugin({
-            templateParameters,
+            templateParameters: getTemplateParameters('works'),
             template: 'templates/index.ejs',
             chunks: ['app', 'works'],
             filename: 'works.html',
